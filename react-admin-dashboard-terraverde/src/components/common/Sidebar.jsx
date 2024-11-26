@@ -21,7 +21,7 @@ const SIDEBAR_ITEMS = [
   },
   { name: "Usuarios", icon: Users, color: "#EC4899", href: "/users" },
   { name: "Productos", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
-  { name: "Pedidos", icon: DollarSign, color: "#10B981", href: "/sales" },
+  { name: "Ventas", icon: DollarSign, color: "#10B981", href: "/sales" },
   {
     name: "Cadena de Suministro",
     icon: ShoppingCart,

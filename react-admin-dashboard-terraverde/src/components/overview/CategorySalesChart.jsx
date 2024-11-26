@@ -1,24 +1,39 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 import { motion } from "framer-motion";
 
-const userRegistrationData = [
-  { name: "Enero", registros: 5 },
-  { name: "Febrero", registros: 8 },
-  { name: "Marzo", registros: 6 },
-  { name: "Abril", registros: 10 },
-  { name: "Mayo", registros: 7 },
+const categorySalesData = [
+  { name: "Orgánico", ventas: 350 },
+  { name: "Tradicional", ventas: 500 },
+  { name: "Descafeinado", ventas: 150 },
+  { name: "Gourmet", ventas: 100 },
+  { name: "Espresso", ventas: 200 },
+  { name: "Grano", ventas: 300 },
+  { name: "Molido", ventas: 400 },
+  { name: "Instantáneo", ventas: 250 },
 ];
 
-const UserRegistrationChart = () => {
+const COLORS = [
+  "#2563EB", // Orgánico
+  "#9D174D", // Tradicional
+  "#059A5E", // Descafeinado
+  "#C26A07", // Gourmet
+  "#4F46E5", // Espresso
+  "#DC2626", // Grano
+  "#6D3BFB", // Molido
+  "#12B4C2", // Instantáneo
+];
+
+const CategorySalesChart = () => {
   return (
     <motion.div
       className="bg-gray-600 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700"
@@ -27,12 +42,12 @@ const UserRegistrationChart = () => {
       transition={{ delay: 0.2 }}
     >
       <h2 className="text-lg font-medium mb-4 text-gray-100">
-        Registro de Usuarios por Mes
+        Ventas por Categoría
       </h2>
 
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
-          <LineChart data={userRegistrationData}>
+          <BarChart data={categorySalesData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
             <XAxis dataKey={"name"} stroke="white" />
             <YAxis stroke="white" />
@@ -43,19 +58,19 @@ const UserRegistrationChart = () => {
               }}
               itemStyle={{ color: "#E5E7EB" }}
             />
-            <Line
-              type="monotone"
-              dataKey="registros"
-              stroke="white"
-              strokeWidth={3}
-              dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
-              activeDot={{ r: 8, strokeWidth: 2 }}
-            />
-          </LineChart>
+            <Bar dataKey="ventas" strokeWidth={3}>
+              {categorySalesData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Bar>
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </motion.div>
   );
 };
 
-export default UserRegistrationChart;
+export default CategorySalesChart;

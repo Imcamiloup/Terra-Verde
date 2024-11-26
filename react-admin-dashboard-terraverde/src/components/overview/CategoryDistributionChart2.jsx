@@ -9,13 +9,12 @@ import {
 } from "recharts";
 
 const categoryData = [
-  { name: "Estable", value: 3600 },
-  { name: "En Observación", value: 4200 },
-  { name: "Critico", value: 700 },
+  { name: "Productores", value: 60 },
+  { name: "Compradores", value: 70 },
+  { name: "Distribuidores", value: 20 },
 ];
 
-const COLORS = ["green", "yellow", "red"];
-
+const COLORS = ["#2a59ac", "#a5356b", "#0b835c"];
 const CategoryDistributionChart2 = () => {
   return (
     <motion.div
@@ -25,7 +24,7 @@ const CategoryDistributionChart2 = () => {
       transition={{ delay: 0.3 }}
     >
       <h2 className="text-lg font-medium mb-4 text-gray-100">
-        Distribución de Calor
+        Distribución de Usuarios por Rol
       </h2>
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>

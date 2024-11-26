@@ -10,13 +10,13 @@ import {
 import { motion } from "framer-motion";
 
 const salesData = [
-  { name: "Lun", humedad: 420 },
-  { name: "Mar", humedad: 380 },
-  { name: "Mie", humedad: 510 },
-  { name: "Jue", humedad: 460 },
-  { name: "Vie", humedad: 540 },
-  { name: "Sab", humedad: 720 },
-  { name: "Dom", humedad: 610 },
+  { name: "Lun", ventas: 420 },
+  { name: "Mar", ventas: 380 },
+  { name: "Mie", ventas: 510 },
+  { name: "Jue", ventas: 460 },
+  { name: "Vie", ventas: 540 },
+  { name: "Sab", ventas: 720 },
+  { name: "Dom", ventas: 610 },
 ];
 
 const SalesOverviewChart = () => {
@@ -27,7 +27,7 @@ const SalesOverviewChart = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <h2 className="text-lg font-medium mb-4 text-gray-100">Humedad</h2>
+      <h2 className="text-lg font-medium mb-4 text-gray-100">Ventas</h2>
 
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
@@ -44,7 +44,7 @@ const SalesOverviewChart = () => {
             />
             <Line
               type="monotone"
-              dataKey="humedad"
+              dataKey="ventas"
               stroke="white"
               strokeWidth={3}
               dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}

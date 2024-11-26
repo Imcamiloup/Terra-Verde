@@ -1,24 +1,23 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import { motion } from "framer-motion";
 
-const userRegistrationData = [
-  { name: "Enero", registros: 5 },
-  { name: "Febrero", registros: 8 },
-  { name: "Marzo", registros: 6 },
-  { name: "Abril", registros: 10 },
-  { name: "Mayo", registros: 7 },
+const userActivityData = [
+  { name: "Productores", productos: 23, pedidos: 0, pedidosDistribuidos: 0 },
+  { name: "Compradores", productos: 0, pedidos: 25, pedidosDistribuidos: 0 },
+  { name: "Distribuidores", productos: 0, pedidos: 0, pedidosDistribuidos: 10 },
 ];
 
-const UserRegistrationChart = () => {
+const UserActivityChart = () => {
   return (
     <motion.div
       className="bg-gray-600 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700"
@@ -27,12 +26,12 @@ const UserRegistrationChart = () => {
       transition={{ delay: 0.2 }}
     >
       <h2 className="text-lg font-medium mb-4 text-gray-100">
-        Registro de Usuarios por Mes
+        Actividad de Usuarios por Rol
       </h2>
 
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
-          <LineChart data={userRegistrationData}>
+          <BarChart data={userActivityData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
             <XAxis dataKey={"name"} stroke="white" />
             <YAxis stroke="white" />
@@ -43,19 +42,30 @@ const UserRegistrationChart = () => {
               }}
               itemStyle={{ color: "#E5E7EB" }}
             />
-            <Line
-              type="monotone"
-              dataKey="registros"
-              stroke="white"
+            <Legend />
+            <Bar
+              dataKey="productos"
+              fill="#6366F1"
               strokeWidth={3}
-              dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
-              activeDot={{ r: 8, strokeWidth: 2 }}
+              name="Productos"
             />
-          </LineChart>
+            <Bar
+              dataKey="pedidos"
+              fill="#EC4899"
+              strokeWidth={3}
+              name="Pedidos"
+            />
+            <Bar
+              dataKey="pedidosDistribuidos"
+              fill="#10B981"
+              strokeWidth={3}
+              name="Pedidos Distribuidos"
+            />
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </motion.div>
   );
 };
 
-export default UserRegistrationChart;
+export default UserActivityChart;

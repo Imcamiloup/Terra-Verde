@@ -19,14 +19,17 @@ const SIDEBAR_ITEMS = [
     color: "#6366f1",
     href: "/",
   },
-  { name: "Cultivos", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-  { name: "Analisis", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
+  { name: "Usuarios", icon: Users, color: "#EC4899", href: "/users" },
+  { name: "Productos", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
+  { name: "Pedidos", icon: DollarSign, color: "#10B981", href: "/sales" },
   {
-    name: "Configuraciones",
-    icon: Settings,
-    color: "#6EE7B7",
-    href: "/settings",
+    name: "Cadena de Suministro",
+    icon: ShoppingCart,
+    color: "#F59E0B",
+    href: "/orders",
   },
+  { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
+  { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
 
 const Sidebar = () => {

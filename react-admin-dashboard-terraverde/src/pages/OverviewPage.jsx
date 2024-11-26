@@ -7,12 +7,13 @@ import SalesOverviewChart from "../components/overview/SalesOverviewChart";
 import SalesOverviewChart2 from "../components/overview/SalesOverviewChart2";
 import CategoryDistributionChart from "../components/overview/CategoryDistributionChart";
 import CategoryDistributionChart2 from "../components/overview/CategoryDistributionChart2";
+import CategorySalesChart from "../components/overview/CategorySalesChart";
 //import SalesChannelChart from "../components/overview/SalesChannelChart";
 
 const OverviewPage = () => {
   return (
     <div className="flex-1 overflow-auto relative z-10">
-      <Header title="Overview" />
+      <Header title="General" />
 
       <main className="max-w-7xl mx-auto py-6 px-4 lg:px-8">
         {/* STATS */}
@@ -23,15 +24,15 @@ const OverviewPage = () => {
           transition={{ duration: 1 }}
         >
           <StatCard
-            name="Total Cultivos"
+            name="Clientes"
             icon={ShoppingBag}
             value="8500"
             color="#EC4899"
           />
           <StatCard
-            name="Cultivos Sanos"
+            name="Productos Disponibles"
             icon={BarChart2}
-            value="81.5%"
+            value="3640"
             color="#10B981"
           />
         </motion.div>
@@ -40,12 +41,20 @@ const OverviewPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <SalesOverviewChart />
-          <SalesOverviewChart2 />
-          <CategoryDistributionChart />
+          {/*<SalesOverviewChart2 />*/}
           <CategoryDistributionChart2 />
+        </div>
+
+        <div className="mt-8">
+          <CategoryDistributionChart />
+        </div>
+
+        <div className="mt-8">
+          <CategorySalesChart />
         </div>
       </main>
     </div>
   );
 };
+
 export default OverviewPage;

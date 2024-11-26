@@ -9,12 +9,26 @@ import {
 } from "recharts";
 
 const categoryData = [
-  { name: "Estable", value: 4500 },
-  { name: "En Observación", value: 3200 },
-  { name: "Critico", value: 800 },
+  { name: "Orgánico", value: 4500 },
+  { name: "Tradicional", value: 3200 },
+  { name: "Descafeinado", value: 800 },
+  { name: "Gourmet", value: 1000 },
+  { name: "Espresso", value: 2000 },
+  { name: "Grano", value: 3000 },
+  { name: "Molido", value: 4000 },
+  { name: "Instantáneo", value: 2500 },
 ];
 
-const COLORS = ["green", "yellow", "red"];
+const COLORS = [
+  "#2563EB", // Más oscuro que #3B82F6
+  "#9D174D", // Más oscuro que #EC4899
+  "#059A5E", // Más oscuro que #10B981
+  "#C26A07", // Más oscuro que #F59E0B
+  "#4F46E5", // Más oscuro que #6366F1
+  "#DC2626", // Más oscuro que #EF4444
+  "#6D3BFB", // Más oscuro que #8B5CF6
+  "#12B4C2", // Más oscuro que #22D3EE
+];
 
 const CategoryDistributionChart = () => {
   return (
@@ -25,7 +39,7 @@ const CategoryDistributionChart = () => {
       transition={{ delay: 0.3 }}
     >
       <h2 className="text-lg font-medium mb-4 text-gray-100">
-        Distribución de Humedad
+        Distribución de Stock por Categoría
       </h2>
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
@@ -63,4 +77,5 @@ const CategoryDistributionChart = () => {
     </motion.div>
   );
 };
+
 export default CategoryDistributionChart;

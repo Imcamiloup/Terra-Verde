@@ -9,7 +9,7 @@ import DailySalesTrend from "../components/sales/DailySalesTrend";
 import SalesTable from "../components/sales/SalesTable";
 
 const salesStats = {
-  totalRevenue: "$1,234,567",
+  totalRevenue: "$53'210.000",
   averageOrderValue: "$78.90",
   conversionRate: "3.45%",
   salesGrowth: "12.3%",

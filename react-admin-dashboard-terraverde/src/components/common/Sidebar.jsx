@@ -23,7 +23,7 @@ const SIDEBAR_ITEMS = [
   { name: "Productos", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
   { name: "Ventas", icon: DollarSign, color: "#10B981", href: "/sales" },
   {
-    name: "Cadena de Suministro",
+    name: "Cultivos",
     icon: ShoppingCart,
     color: "#F59E0B",
     href: "/orders",

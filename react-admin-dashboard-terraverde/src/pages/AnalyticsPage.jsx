@@ -9,6 +9,7 @@ import CustomerSegmentation from "../components/analytics/CustomerSegmentation";
 import AIPoweredInsights from "../components/analytics/AIPoweredInsights";
 import CoffeePriceScatterChart from "../components/overview/CoffeePriceScatterChart";
 import NDVIScatterChart from "../components/overview/NDVIScatterChart";
+import MapaPereira from "../components/analytics/MapaPereira";
 
 const AnalyticsPage = () => {
   return (
@@ -32,6 +33,13 @@ const AnalyticsPage = () => {
           <CustomerSegmentation />
         <AIPoweredInsights />
         </div>*/}
+
+        {/* Renderiza MapaPereira al final */}
+        {/*
+          <div className="mt-8">
+            <MapaPereira />
+          </div>
+        */}
       </main>
     </div>
   );
